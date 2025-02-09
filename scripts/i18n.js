@@ -21,6 +21,7 @@ const I18n = {
             this.translations = await response.json();
             this.currentLang = lang;
             this.updatePage();
+            this.selectLanguageBtn(lang);
             localStorage.setItem('lang', lang);
         } catch (error) {
             console.error(`Error on load language ${lang}:`, error);
@@ -38,6 +39,17 @@ const I18n = {
                 el.textContent = this.translations[key];
             }
         });
+    },
+
+    selectLanguageBtn(lang) {
+        // Remove a classe 'active' de todos os botões
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Adiciona a classe 'active' ao botão selecionado
+        const btn = document.querySelector('.language-btn.' + lang.toLowerCase());
+        if (btn) btn.classList.add('active');
     },
 
     init() {
