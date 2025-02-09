@@ -1,0 +1,8 @@
+{
+    "name": "profesional-website",
+    "version": "1.0.0",
+    "author": "Fabricio Souza <fabricio.souza@gmail.com>",
+    "scripts": {
+        "start": "python -m http.server 7000"
+    }
+  }

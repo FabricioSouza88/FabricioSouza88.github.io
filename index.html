@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title"></title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="scripts/i18n.js"></script>
+    <script defer src="scripts/socialShare.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="actions-bar hide-on-print">
+        <div class="back-box">
+            <button onclick="I18n.loadLanguage('en')">
+                <span class="iconify" data-icon="twemoji:flag-united-kingdom"></span> en
+            </button>
+            <button onclick="I18n.loadLanguage('pt')">
+                <span class="iconify" data-icon="twemoji:flag-brazil"></span> pt
+            </button>
+            <button onclick="I18n.loadLanguage('es')">
+                <span class="iconify" data-icon="twemoji:flag-spain"></span> es
+            </button>
+            <div class="point-separator"></div>
+            <button class="print-button" onclick="window.print()" title="Print">
+                <span class="iconify" data-icon="mdi:printer"></span>
+            </button>
+            <button class="share-button" onclick="share()" title="Share">
+                <span class="iconify" data-icon="mdi:share-variant"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <div class="profile-picture">
+                <img src="assets/images/profile.jpeg" alt="Foto de Perfil">
+            </div>
+            <h1>
+                <span data-i18n="title">Fabricio Souza</span>
+                <span class="iconify" data-icon="solar:verified-check-bold" style="color: #0095F6;"></span>
+            </h1>
+            <p data-i18n="about-description">Software Engineer | Full-Stack Developer | Specialist Web</p>
+            <div class="badges">
+                <span class="badge"><span class="iconify" data-icon="mdi:email"></span><a href="mailto:fabricio.collins@gmail.com" aria-label="Email" style="color:white; text-decoration:none;">fabricio.collins@gmail.com</a></span>
+                <span class="badge"><span class="iconify" data-icon="mdi:linkedin"></span><a href="https://www.linkedin.com/in/fabriciosouza88" target="_blank" aria-label="LinkedIn" style="color:white; text-decoration:none;">LinkedIn</a></span>
+                <span class="badge"><span class="iconify" data-icon="mdi:github"></span><a href="https://github.com/FabricioSouza88" target="_blank" aria-label="GitHub" style="color:white; text-decoration:none;">GitHub</a></span>
+                <span class="badge"><span class="iconify" data-icon="mdi:whatsapp"></span><a href="https://wa.me/5531991074760" target="_blank" aria-label="Whatsppp" style="color:white; text-decoration:none;">Whatsppp</a></span>
+            </div>
+        </header>
+
+        <div class="divide"></div>
+
+        <section class="about-me">
+            <h2 data-i18n="about-title"></h2>
+            <p data-i18n="about-text"></p>
+            <p data-i18n="about-professional-summary"></p>
+        </section>
+
+        <section class="education">
+            <h2 data-i18n="education-title"></h2>
+            <div class="experience">
+                <p class="experience-item">
+                    <div class="experience-line">
+                        <a href="https://www.linkedin.com/school/xpeducacao/posts/?feedView=all" target="_blank">
+                            <img src="./assets/images/companies/xpeducacao_logo.jpg" alt="Udemy">
+                        </a>
+                        <strong data-i18n="education-3-course"></strong> &nbsp;-&nbsp; <span data-i18n="education-3-institution"></span> (<span data-i18n="education-3-period"></span>)
+                    </div>
+                </p>
+                <p class="experience-item">
+                    <div class="experience-line">
+                        <a href="https://www.linkedin.com/school/xpeducacao/posts/?feedView=all" target="_blank">
+                            <img src="./assets/images/companies/xpeducacao_logo.jpg" alt="Udemy">
+                        </a>
+                        <strong data-i18n="education-2-course"></strong> &nbsp;-&nbsp; <span data-i18n="education-2-institution"></span> (<span data-i18n="education-2-period"></span>)
+                    </div>
+                </p>
+                <p class="experience-item">
+                    <div class="experience-line">
+                        <a href="https://www.linkedin.com/school/pucminas/posts/?feedView=all" target="_blank">
+                            <img src="./assets/images/companies/pucminas_logo.jpg" alt="Puc Minas">
+                        </a>
+                        <strong data-i18n="education-1-course"></strong> &nbsp;-&nbsp; <span data-i18n="education-1-institution"></span> (<span data-i18n="education-1-period"></span>)
+                    </div>
+                </p>
+            </div>
+        </section>
+
+        <section class="experiences">
+            <h2 data-i18n="experience-title"></h2>
+            <div class="experience">
+                <p class="experience-item">
+                    <div class="experience-line">
+                        <a href="https://www.linkedin.com/company/accenture/posts/?feedView=all" target="_blank">
+                            <img src="./assets/images/companies/accenture_logo.jpeg" alt="Accenture">
+                        </a>
+                        <h3>Accenture</h3><span class="point-separator"></span> <span data-i18n="experience-1-period"></span>
+                    </div>
+                    
+                    <ul>
+                        <li>I&F Decision Sci Practitioner Specialist (<span data-i18n="experience-1-period-3"></span>)</li>
+                        <li>Data Science Senior Analyst (<span data-i18n="experience-1-period-2"></span>)</li>
+                        <li>Data Science Analyst (<span data-i18n="experience-1-period-1"></span>)</li>
+                    </ul>
+                    <p class="experience-text" data-i18n="experience-1-text"></p>
+                </p>
+                <p class="experience-item">
+                    <div class="experience-line">
+                        <a href="https://www.linkedin.com/company/horizonti/posts/?feedView=all" target="_blank">
+                            <img src="./assets/images/companies/horizonti_logo.jpg" alt="2x3">
+                        </a>
+                        <h3>2x3 Inteligência Digital</h3><span class="point-separator"></span> <span data-i18n="experience-2-period"></span>
+                    </div>
+                    <p class="experience-text" data-i18n="experience-2-text"></p>
+                </p>
+            </div>
+        </section>
+
+        <section class="technical-skills">
+            <h2 data-i18n="skills-title">Technical Skills</h2>
+            
+            <h4 data-i18n="skill-language">Languages</h4>
+            <div class="badges">
+                <span class="badge">C# (.NET Core, Entity Framework, Azure Functions)</span>
+                <span class="badge">Java (Spring Boot, JPA, Hibernate)</span>
+                <span class="badge">JavaScript (TypeScipt, VueJS, React, Node.JS, NPM)</span>
+                <span class="badge">Python</span>
+            </div>
+
+            <h4 data-i18n="skill-technologies">Platforms and Technologies</h4>
+            <div class="badges">
+                <span class="badge">Docker & Docker Compose</span>
+                <span class="badge">Kubernets</span>
+                <span class="badge">Rabbit MQ</span>
+                <span class="badge">Kafka</span>
+                <span class="badge">Git (Git Flow, Trunk Based, Code Review, Advanced Use)</span>
+                <span class="badge">IaC (Terraform)</span>
+            </div>
+
+            <h4 data-i18n="skill-design-patterns">Design Patterns and Processes</h4>
+            <div class="badges">
+                <span class="badge">Microservices</span>
+                <span class="badge">Distributed Systems</span>
+                <span class="badge">Event Driven Architecture</span>
+                <span class="badge">RESTful API</span>
+                <span class="badge">Generative AI</span>
+                <span class="badge">GraphQL</span>
+                <span class="badge">Hexagonal Architecture</span>
+                <span class="badge">Advanced POO</span>
+                <span class="badge">Clean Architecture</span>
+                <span class="badge">SAGA Pattern</span>
+                <span class="badge">MVC</span>
+                <span class="badge">SOLID</span>
+                <span class="badge">DDD</span>
+                <span class="badge">TDD</span>
+                <span class="badge">CI/CD</span>
+                <span class="badge">DevOps</span>
+
+            </div>
+
+            <h4 data-i18n="skill-cloud">Cloud</h4>
+            <div class="badges">
+                <span class="badge">Azure</span>
+                <span class="badge">AWS</span>
+            </div>
+        </section>
+
+        <section class="idioms">
+            <h2 data-i18n="idioms-title">Idioms</h2>
+            <div class="badges">
+                <span class="badge"><span class="iconify" data-icon="twemoji:flag-brazil"></span>Portuguese (Native)</span>
+                <span class="badge"><span class="iconify" data-icon="twemoji:flag-united-kingdom"></span>English (Intermediate)</span>
+                <span class="badge"><span class="iconify" data-icon="twemoji:flag-spain"></span>Spanish (Intermediate)</span>
+            </div>
+
+        </section>
+    </div>
+</body>
+</html>
