@@ -22,9 +22,15 @@
     "experience-1-text": "Desenvolvimento e manutenção de aplicações Web robustas, desenho de soluções e liderança técnica em projetos estratégicos, garantindo escalabilidade e segurança.",
     "experience-2-period": "set/2015 - mar/2017",
     "experience-2-text": "Desenvolvimento e manutenção de aplicações Web com tecnologias Java Spring Boot, VueJS, PostgreSQL e Cloud AWS.",
+    "experience-3-period": "out/2012 - set/2015",
+    "experience-3-text": "Desenvolvimento de sistemas com ênfase em geoprocessamento. Modelagem de sistemas. Manipulação de dados geográficos. Banco de Dados. Principais tecnologias: Java (Spring), JS (JQuery e OpenLayers), CSS, HTML, Postgres (Postgis).",
+    "experience-4-period": "jun/2010 - out/2012",
+    "experience-4-text": "Desenvolvimento de sistemas web com ênfase em geoprocessamento. Criação e edição de dados geográficos. Atuação no levantamento de requisitos de novas soluções. Treinamento para clientes. Supervisão de alguns projetos e da equipe de estagiários. Principais tecnologias: Java(EE, Swing), Javascript (JQuery, Openlayers), CSS, HTML, Geoserver, Oracle Spatial.",
     "skills-title": "Habilidades Técnicas",
     "skill-language": "Linguagens",
     "skill-technologies": "Tecnologias e Ferramentas",
     "skill-design-patterns": "Padrões de Projetos e Processos",
-    "Cloud": "Nuvem"
+    "Cloud": "Nuvem",
+    "btn-show-more": "Mostrar mais...",
+    "btn-show-less": "Mostrar menos."
 }

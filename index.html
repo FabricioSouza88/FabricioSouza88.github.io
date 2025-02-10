@@ -6,6 +6,7 @@
     <title data-i18n="title"></title>
     <link rel="stylesheet" href="styles/main.css">
     <script defer src="scripts/i18n.js"></script>
+    <script defer src="scripts/main.js"></script>
     <script defer src="scripts/socialShare.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
@@ -51,13 +52,13 @@
 
         <div class="divide"></div>
 
-        <section class="about-me">
+        <section class="section about-me">
             <h2 data-i18n="about-title"></h2>
             <p data-i18n="about-text"></p>
             <p data-i18n="about-professional-summary"></p>
         </section>
 
-        <section class="education">
+        <section class="section education">
             <h2 data-i18n="education-title"></h2>
             <div class="experience">
                 <p class="experience-item">
@@ -87,37 +88,61 @@
             </div>
         </section>
 
-        <section class="experiences">
+        <section class="section experiences">
             <h2 data-i18n="experience-title"></h2>
             <div class="experience">
                 <p class="experience-item">
                     <div class="experience-line">
-                        <a href="https://www.linkedin.com/company/accenture/posts/?feedView=all" target="_blank">
+                        <a href="https://www.linkedin.com/company/accenture/" target="_blank">
                             <img src="./assets/images/companies/accenture_logo.jpeg" alt="Accenture">
                         </a>
                         <h3>Accenture</h3><span class="point-separator"></span> <span data-i18n="experience-1-period"></span>
                     </div>
                     
                     <ul>
-                        <li>I&F Decision Sci Practitioner Specialist (<span data-i18n="experience-1-period-3"></span>)</li>
-                        <li>Data Science Senior Analyst (<span data-i18n="experience-1-period-2"></span>)</li>
-                        <li>Data Science Analyst (<span data-i18n="experience-1-period-1"></span>)</li>
+                        <li><strong>I&F Decision Sci Practitioner Specialist</strong> (<span data-i18n="experience-1-period-3"></span>)</li>
+                        <li><strong>Data Science Senior Analyst</strong> (<span data-i18n="experience-1-period-2"></span>)</li>
+                        <li><strong>Data Science Analyst</strong> (<span data-i18n="experience-1-period-1"></span>)</li>
                     </ul>
                     <p class="experience-text" data-i18n="experience-1-text"></p>
                 </p>
                 <p class="experience-item">
                     <div class="experience-line">
-                        <a href="https://www.linkedin.com/company/horizonti/posts/?feedView=all" target="_blank">
+                        <a href="https://www.linkedin.com/company/horizonti/" target="_blank">
                             <img src="./assets/images/companies/horizonti_logo.jpg" alt="2x3">
                         </a>
                         <h3>2x3 Inteligência Digital</h3><span class="point-separator"></span> <span data-i18n="experience-2-period"></span>
                     </div>
                     <p class="experience-text" data-i18n="experience-2-text"></p>
                 </p>
+                <div class="expandable">
+                    <div class="expandable-content">
+                        <p class="experience-item">
+                            <div class="experience-line">
+                                <a href="https://www.linkedin.com/company/threetek/" target="_blank">
+                                    <img src="./assets/images/companies/threetek_logo.jpg" alt="Threetek">
+                                </a>
+                                <h3>Threetek Soluções em Geomática</h3><span class="point-separator"></span> <span data-i18n="experience-3-period"></span>
+                            </div>
+                            <p class="experience-text" data-i18n="experience-3-text"></p>
+                        </p>
+                        <p class="experience-item">
+                            <div class="experience-line">
+                                <a href="https://www.linkedin.com/company/hiparc-aerolevantamentos/" target="_blank">
+                                    <img src="./assets/images/companies/hiparc_logo.jpg" alt="Hiparc">
+                                </a>
+                                <h3>Hiparc Sistemas e Aerolevantamentos Ltda</h3><span class="point-separator"></span> <span data-i18n="experience-4-period"></span>
+                            </div>
+                            <p class="experience-text" data-i18n="experience-4-text"></p>
+                        </p>
+                    </div>
+                    <button class="expandable-btn more active" data-i18n="btn-show-more" onclick="site.toggleExpandable('open')">Show more...</button>
+                    <button class="expandable-btn less" data-i18n="btn-show-less" onclick="site.toggleExpandable('close')">Show less...</button>
+                </div>
             </div>
         </section>
 
-        <section class="technical-skills">
+        <section class="section technical-skills">
             <h2 data-i18n="skills-title">Technical Skills</h2>
             
             <h4 data-i18n="skill-language">Languages</h4>
@@ -166,7 +191,7 @@
             </div>
         </section>
 
-        <section class="idioms">
+        <section class="section idioms">
             <h2 data-i18n="idioms-title">Idioms</h2>
             <div class="badges">
                 <span class="badge"><span class="iconify" data-icon="twemoji:flag-brazil"></span>Portuguese (Native)</span>
