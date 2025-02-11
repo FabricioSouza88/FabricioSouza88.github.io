@@ -41,6 +41,10 @@ section.h2 {
 section {
     margin-bottom: 30px;
 }
+a {
+    color:white; 
+    text-decoration:none;
+}
 
 /* Standard Classes */
 
@@ -146,14 +150,24 @@ section {
   }
 }
 
+section.about-me > p {
+    text-align: left;
+    text-indent: 2em;  
+}
+
 /* Academic */
 .experience {
     .experience-line {
         display: flex;
         align-items: center;
+        height: auto;
     }
     .experience-text {
-        padding-left: 25px;
+        padding: 0px 15px 0px 45px;
+        margin: 0px;
+    }
+    ul {
+        padding: 0px 15px 0px 60px;
     }
     img {
         width: 30px;
@@ -217,44 +231,53 @@ section {
     print-color-adjust: exact;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--white-color);
-}
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--white-color);
+    }
 
-.container {
-    box-shadow: none;
-    border-radius: 0;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-.utility-buttons {
-    display: none;
-}
+    .utility-buttons {
+        display: none;
+    }
 
-.badge,
-.skills li {
-    background-color: var(--primary-color) !important;
-    color: var(--white-color) !important;
-}
+    .badge,
+    .skills li {
+        background-color: var(--primary-color) !important;
+        color: var(--white-color) !important;
+    }
 
-.section {
-    page-break-inside: avoid;
-}
+    .section {
+        page-break-inside: avoid;
+    }
 
-.show-on-print{
-    display: block;
-}
+    .show-on-print{
+        display: block;
+    }
 
-.hide-on-print{
-    display: none;
-}
+    .hide-on-print{
+        display: none;
+    }
 
-h1,
-h2 {
-    page-break-after: avoid;
-}
+    h1,
+    h2 {
+        page-break-after: avoid;
+    }
+
+    .expandable {
+        .expandable-content {
+            display: block;
+        }
+        .expandable-btn {
+            display: none;
+        }
+    }
 }

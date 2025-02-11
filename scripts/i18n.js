@@ -8,6 +8,7 @@ const I18n = {
             const response = await fetch('../config.json');
             const config = await response.json();
             this.fallbackLanguage = config.fallbackLanguage || this.fallbackLanguage;
+            this.currentLang = this.fallbackLanguage;
             this.init();
         } catch (error) {
             console.error("Error on load config file:", error);
@@ -52,8 +53,12 @@ const I18n = {
         if (btn) btn.classList.add('active');
     },
 
+    getNavigatorLang() {
+        return navigator.language.split('-')[0];
+    },
+
     init() {
-        const savedLang = localStorage.getItem('lang') || navigator.language.split('-')[0] || this.fallbackLanguage;
+        const savedLang = localStorage.getItem('lang') || this.fallbackLanguage;
         this.loadLanguage(savedLang);
     }
 };
