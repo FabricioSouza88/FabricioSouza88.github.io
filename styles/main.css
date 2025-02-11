@@ -68,7 +68,7 @@ a {
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 10px auto;
     background-color: var(--white-color);
     padding: 15px;
     border-radius: 8px;
@@ -82,7 +82,7 @@ a {
     text-align: right;
     margin: auto;
     padding-top: 5px;
-    max-width: 820px;
+    max-width: 828px;
     border-radius: 8px;
 
     .back-box {
