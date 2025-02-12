@@ -47,7 +47,9 @@ a {
 }
 
 /* Standard Classes */
-
+.hide {
+    display: none;
+}
 .divide {
     border-bottom: 1px solid var(--secondary-color);
     margin: 20px 0;
@@ -61,7 +63,7 @@ a {
     display: inline-block;
     align-items: center;
     margin: 10px 5px;
-    color: var(--lightgrayscale-color);
+    color: var(--lightgray-color);
 }
 
 /* Site Classes */
@@ -260,11 +262,11 @@ section.about-me > p {
     }
 
     .show-on-print{
-        display: block;
+        display: inline-block;
     }
 
     .hide-on-print{
-        display: none;
+        display: none !important;
     }
 
     h1,
