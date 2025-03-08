@@ -43,10 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal();
   });
 
-  if (chatbotWelcomeMessage) {
-    appendMessage(chatbotWelcomeMessage, true);
-  }
-
   function closeModal() {
     chatbot.style.display = "none";
     messageContainer.innerHTML = "";
@@ -54,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openModal() {
     chatbot.style.display = "block";
+    if (chatbotWelcomeMessage) {
+      appendMessage(chatbotWelcomeMessage, true);
+    }
   }
 
   function appendMessage(message, isBot = true) {
