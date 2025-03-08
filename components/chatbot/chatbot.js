@@ -58,9 +58,26 @@ document.addEventListener("DOMContentLoaded", function () {
   function appendMessage(message, isBot = true) {
     const messageItem = document.createElement("div");
     messageItem.classList.add(isBot? "bot-message" : "user-message");
-    messageItem.textContent = message;
+    if (!isBot) {
+      messageItem.textContent = message;
+    }
+    else {
+      typeWriterEffect(messageItem, message, 30);
+    }
     messageItem.appendChild(getMessageTime());
     messageContainer.appendChild(messageItem);
+  }
+
+  function typeWriterEffect(element, text, speed = 100) {
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, speed);
+      }
+    }
+    typing();
   }
 
   function getMessageTime() {
