@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeChat.addEventListener("click", function () {
     closeModal();
-    messageContainer.innerHTML = "";
   });
 
   if (chatbotWelcomeMessage) {
@@ -50,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeModal() {
     chatbot.style.display = "none";
+    messageContainer.innerHTML = "";
   }
 
   function openModal() {
@@ -80,13 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
     appendMessage(inputText, false);
     inputField.value = "";
 
+    // Adicionar indicador de carregamento
+    const loadingMessage = document.createElement("div");
+    loadingMessage.classList.add("bot-message", "loading", "blink");
+    loadingMessage.textContent = "Digitando...";
     setTimeout(() => {
-      // Adicionar indicador de carregamento
-      const loadingMessage = document.createElement("div");
-      loadingMessage.classList.add("bot-message", "loading");
-      loadingMessage.textContent = "Digitando...";
       messageContainer.appendChild(loadingMessage);
-    }, 500);
+    }, 700);
 
     // Fazer requisição à API
     fetch(chatbotApiUrl, {
@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         messageContainer.removeChild(loadingMessage);
+        console.log(data);
         appendMessage(data.response, true);
       })
       .catch(() => {
