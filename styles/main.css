@@ -282,4 +282,8 @@ section.about-me > p {
             display: none;
         }
     }
+
+    #chatbot-container {
+        display: none;
+    }
 }
