@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const apiKeyValue = document.getElementById("chatbot-script")?.getAttribute("data-api-key-value");
   const chatbotWelcomeMessage = document.getElementById("chatbot-script")?.getAttribute("data-welcome-message");
   const chatModalTitle = document.getElementById("chatbot-script")?.getAttribute("data-modal-title") || "Chatbot";
+  const externalopenListener = document.getElementById("chatbot-script")?.getAttribute("data-external-open-listener");
 
   const chatContainer = document.createElement("div");
   chatContainer.id = "chatbot-container";
@@ -33,24 +34,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendButton = document.getElementById("chatbot-send");
   const inputField = document.getElementById("chatbot-input");
   const messageContainer = document.getElementById("chatbot-messages");
+  const externalopenElement = document.getElementById(externalopenListener);
 
-  closeModal();
+  closeChatbotModal();
 
   // Exibir/Ocultar chat
   chatbotButton.addEventListener("click", function () {
-    chatbot.style.display = chatbot.style.display === "none" ? openModal() : closeModal();
+    chatbot.style.display = chatbot.style.display === "none" ? openChatbotModal() : closeChatbotModal();
   });
 
   closeChat.addEventListener("click", function () {
-    closeModal();
+    closeChatbotModal();
   });
 
-  function closeModal() {
-    chatbot.style.display = "none";
-    messageContainer.innerHTML = "";
+  if (externalopenElement) {
+    externalopenElement.addEventListener("click", function () {
+      openChatbotModal();
+    });
   }
 
-  function openModal() {
+  function closeChatbotModal() {
+    chatbot.style.display = "none";
+  }
+
+  function openChatbotModal() {
+    messageContainer.innerHTML = "";
     chatbot.style.display = "block";
     if (chatbotWelcomeMessage) {
       appendMessage(chatbotWelcomeMessage, true);
