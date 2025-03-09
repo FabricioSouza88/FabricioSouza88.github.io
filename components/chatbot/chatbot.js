@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Captura a URL da API e a mensagem inicial da página principal
   const chatbotApiUrl = document.getElementById("chatbot-script")?.getAttribute("data-api-url");
+  const apiKeyName = document.getElementById("chatbot-script")?.getAttribute("data-api-key-name");
+  const apiKeyValue = document.getElementById("chatbot-script")?.getAttribute("data-api-key-value");
   const chatbotWelcomeMessage = document.getElementById("chatbot-script")?.getAttribute("data-welcome-message");
   const chatModalTitle = document.getElementById("chatbot-script")?.getAttribute("data-modal-title") || "Chatbot";
 
@@ -109,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        [apiKeyValue]: apiKeyName,
       },
       body: JSON.stringify({ question: inputText }),
     })
