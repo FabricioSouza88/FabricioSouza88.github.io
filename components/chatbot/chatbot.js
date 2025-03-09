@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        [apiKeyValue]: apiKeyName,
+        [apiKeyName]: apiKeyValue,
       },
       body: JSON.stringify({ question: inputText }),
     })
