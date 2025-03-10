@@ -212,6 +212,7 @@ section.about-me > p {
     z-index: 1000;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
+    height: auto;
 }
 
 /* Efeito de hover */
@@ -222,6 +223,8 @@ section.about-me > p {
 /* Responsividade */
 @media (max-width: 768px) {
     .chatbot-announcement {
+        width: 30%;
+        height: 70px;
         right: 10px;
         bottom: 10px;
         font-size: 12px;
