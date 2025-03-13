@@ -17,6 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const messageContainer = document.getElementById("chatbot-messages");
   const externalopenElement = document.getElementById(externalopenListener);
 
+  let stopScroll = false;
+  messageContainer.addEventListener("scroll", () => {
+    if (messageContainer.scrollTop + messageContainer.clientHeight === messageContainer.scrollHeight) {
+      stopScroll = false;
+    } else {
+      stopScroll = true;
+    }
+  });
+
   closeChatbotModal();
 
   chatbotButton.addEventListener("click", toggleChatbot);
@@ -137,7 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateScrollTop() {
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+    if (!stopScroll)
+      messageContainer.scrollTop = messageContainer.scrollHeight;
   }
 
   function getMessageTime() {
@@ -148,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function sendMessage(time = 1000) {
+    stopScroll = false;
     const inputText = inputField.value.trim();
     if (!inputText) return;
 
