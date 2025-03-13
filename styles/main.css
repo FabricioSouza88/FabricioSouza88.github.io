@@ -41,9 +41,10 @@ section.h2 {
 section {
     margin-bottom: 30px;
 }
-a {
-    color:white; 
-    text-decoration:none;
+a,
+a:visited {
+    color: #007bff;
+    text-decoration: none;
 }
 
 /* Standard Classes */

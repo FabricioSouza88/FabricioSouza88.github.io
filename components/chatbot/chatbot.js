@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
 
   document.body.appendChild(chatContainer);
+  loadScript("https://cdn.jsdelivr.net/npm/marked/marked.min.js", () => { console.log("Markdown Script loaded!"); });
 
   const chatbot = document.getElementById("chatbot");
   const chatbotButton = document.getElementById("chatbot-button");
@@ -72,22 +73,64 @@ document.addEventListener("DOMContentLoaded", function () {
       messageItem.textContent = message;
     }
     else {
-      typeWriterEffect(messageItem, message, 30);
+      const messageHTML = marked.parse(message);
+      typeWriterEffect(messageItem, messageHTML, 30);
     }
     messageItem.appendChild(getMessageTime());
     messageContainer.appendChild(messageItem);
   }
 
-  function typeWriterEffect(element, text, speed = 100) {
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, speed);
-      }
+  function typeWriterEffect(element, htmlText, speed = 50) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlText;
+
+    const nodes = Array.from(tempDiv.childNodes);
+    element.innerHTML = ""; // Limpa antes de digitar
+
+    function typeNode(parent, node, callback) {
+        if (!node) {
+            callback();
+            return;
+        }
+
+        if (node.nodeType === Node.TEXT_NODE) {
+            // Se for um texto, adicionamos letra por letra
+            let text = node.textContent;
+            let span = document.createElement("span");
+            parent.appendChild(span);
+
+            let i = 0;
+            function typeCharacter() {
+                if (i < text.length) {
+                    span.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeCharacter, speed);
+                } else {
+                    callback();
+                }
+            }
+            typeCharacter();
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // Se for um elemento HTML (ex: <p>, <strong>), clonamos e processamos os filhos
+            let clonedNode = document.createElement(node.nodeName.toLowerCase());
+            [...node.attributes].forEach(attr => clonedNode.setAttribute(attr.name, attr.value));
+            parent.appendChild(clonedNode);
+
+            typeNodes(clonedNode, node.childNodes, callback);
+        }
     }
-    typing();
+
+    function typeNodes(parent, nodes, callback, index = 0) {
+        if (index < nodes.length) {
+            typeNode(parent, nodes[index], () => {
+                typeNodes(parent, nodes, callback, index + 1);
+            });
+        } else {
+            callback();
+        }
+    }
+
+    typeNodes(element, nodes, () => {});
   }
 
   function getMessageTime() {
@@ -109,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adicionar indicador de carregamento
     const loadingMessage = document.createElement("div");
     loadingMessage.classList.add("bot-message", "loading", "blink");
-    loadingMessage.textContent = "Digitando...";
+    loadingMessage.textContent = "Processando...";
     setTimeout(() => {
       messageContainer.appendChild(loadingMessage);
     }, 700);
@@ -140,6 +183,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Rolar para baixo automaticamente
     messageContainer.scrollTop = messageContainer.scrollHeight;
   }
+
+  function loadScript(src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = callback;
+    document.head.appendChild(script);
+}
 
   sendButton.addEventListener("click", sendMessage);
   inputField.addEventListener("keydown", function (e) {
