@@ -83,6 +83,12 @@
   padding-right: 10px;
 }
 
+.chat-error-message {
+  background-color: #FFD3D3;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
 #chatbot-input-container {
   display: flex;
   border-top: 1px solid #ccc;
